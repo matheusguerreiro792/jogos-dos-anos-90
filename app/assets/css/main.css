@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-paper: #fdfcf8;
+  --retro-red: #e63946;
+  --retro-blue: #1d3557;
+  --retro-gold: #ffb703;
+  --retro-border: #1a1a1a;
+}
+
+body {
+  background-color: var(--bg-paper);
+  color: var(--retro-blue);
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+.font-display {
+  font-family: "Anton", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.font-retro {
+  font-family: "Press Start 2P", cursive;
+}
+
+.magazine-border {
+  border: 3px solid var(--retro-border);
+  box-shadow: 4px 4px 0px var(--retro-border);
+}
+
+.pokedex-card {
+  background: #f1faee;
+  border: 4px solid var(--retro-border);
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.pokedex-card::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 15px;
+  height: 15px;
+  background: #457b9d;
+  border-radius: 50%;
+  border: 2px solid var(--retro-border);
+}
+
+.cta-button {
+  @apply px-6 py-3 font-bold uppercase transition-all magazine-border active:translate-x-[2px] active:translate-y-[2px] active:shadow-none;
+}
+
+.cta-primary {
+  @apply bg-red-600 text-white hover:bg-red-700;
+}
+
+.cta-secondary {
+  @apply bg-blue-700 text-white hover:bg-blue-800;
+}
